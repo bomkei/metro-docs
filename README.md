@@ -26,7 +26,7 @@ C++ で開発されている 静的型付けスクリプト言語 です。(リ�
 Rust のような構文が特徴で、型システムについては C# や C++ を参考にした独自の設計がされています。 <br>
 
 ## 言語を使ってみる
-リポジトリをクローンしてビルドし、`Hello, World!` を表示させる手順。
+リポジトリをクローンしてビルドし、`Hello, World!` を出力させる手順。
 ```
 git clone https://github.com/bomkei/metro.git
 cd metro
@@ -36,19 +36,5 @@ echo "println(\"Hello, World!\");" > test.metro
 ```
 
 # 仕様書
-## 言語仕様
-
-- [字句 (トークン)](./papers/ja/lang/lexical/)
-- [構文](./papers/ja/lang/syntax/)
-- [基本型](./papers/ja/lang/types.md)
-- [組み込み関数]()
-
-## 処理系
-### インタプリタ
-- [字句解析 (Lexer)](./papers/ja/interpreter/lexer.md)
-- [構文解析 (Parser)](./papers/ja/interpreter/parser.md)
-- [意味解析 (Semantics-Analyzer)](./papers/ja/interpreter/semantics-analyzer.md)
-- [構文実行 (Evaluator)](./papers/ja/interpreter/evaluator.md)
-
-### その他
-- [オブジェクト](./papers/ja/)
+### [言語仕様](./papers/ja/lang/)
+### [インタプリタ](./papers/ja/interpreter/)
