@@ -9,7 +9,7 @@
 ## Links
 - [Metro](https://github.com/bomkei/metro)
 - [Discord](https://discord.gg/pWNv7PPryp)
-- [Twitter](https://twitter.com/metro_lang)
+- [Twitter](https://twitter.com/metrolang)
 - [開発者 Twitter](https://twitter.com/letz00)
 - [開発者 GitHub](https://github.com/bomkei)
 
