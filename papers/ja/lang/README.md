@@ -2,7 +2,6 @@
 
 ## 字句
 - [トークン](./lexical/token.md)
-- [予約後](./lexical/keywords.md)
 
 ## 構文
 - [式](./syntax/expr.md)
