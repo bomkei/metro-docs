@@ -34,23 +34,23 @@ expr            = assign
 
 ## stmt
 ```
-scope           = "{" expr* "}"
-
 if              = "if" expr scope ("else" (if | scope))?
 case            = "case" expr ":" scope
 switch          = "switch" expr "{" case "}"
-return          = "return" expr? semi
-break           = "break" semi
-continue        = "continue" semi
+return          = "return" expr?
+break           = "break"
+continue        = "continue"
 controls        = if | case | switch | return | break | continue
 
 loop            = "loop" scope
 for             = "for" expr "in" expr scope
 while           = "while" expr scope
-do_while        = "do" scope "while" expr semi
+do_while        = "do" scope "while" expr
 loops           = loop | for | while | do_while
 
-let             = "let" ident (":" type)? ("=" expr)? semi
+let             = "let" ident (":" type)? ("=" expr)?
+
+scope           = "{" (expr semi?)* "}"
 
 stmt            = scope | controls | loops | let
 ```
