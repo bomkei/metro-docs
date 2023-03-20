@@ -51,14 +51,14 @@ loops           = loop | for | while | do_while
 let             = "let" ident (":" type)? ("=" expr)?
 
 scope           = "{" (expr semi?)* "}"
-
 stmt            = scope | controls | loops | let
 ```
 
-## program
+## top
 ```
 import          = "import" ident ("/" ident)*
-
+struct_item     = ident ":" type
+struct          = "struct" ident "{" struct_item ("," struct_item)* "}"
 function        = "fn" ident "(" (argument ("," argument)*)? ")"
                   "->" type scope
 
