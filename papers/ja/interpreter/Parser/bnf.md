@@ -62,7 +62,7 @@ import          = "import" ident ("/" ident)*
 function        = "fn" ident "(" (argument ("," argument)*)? ")"
                   "->" type scope
 
-program         = (import | function | stmt)*
+program         = (import | function | expr semi?)*
 ```
 
 ## other
