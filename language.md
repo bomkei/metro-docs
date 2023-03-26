@@ -226,6 +226,9 @@ println(x);  // => MyStruct{ num: 0, str: "" }
 init        = "." ident "=" expr
 new         = "new" typename "{" init ("," init)* "}"
 ```
+```
+let x = new MyStruct { .num = 10, .str = "abc" };
+```
 
 
 ## メンバ関数 (impl)
