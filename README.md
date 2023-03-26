@@ -36,5 +36,4 @@ echo "println(\"Hello, World!\");" > test.metro
 ```
 
 # 仕様書
-### [言語仕様](./papers/ja/lang/)
-### [インタプリタ](./papers/ja/interpreter/)
+## [言語仕様](./language.md)
