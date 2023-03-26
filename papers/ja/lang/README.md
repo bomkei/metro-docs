@@ -1,7 +1,8 @@
 # 言語仕様
 
 # 字句
-- [トークン](./lexical/token.md)
+トークンです。これ書く必要あるのかな？
+
 
 # 組み込み型
 | 名前 | 説明 | 用途 | 値 |
@@ -49,10 +50,15 @@
 let         = "let" ident (":" typename)? ("=" expr)?
 ```
 ```
+let a = 1 + 2;                 // int
+let a = { a: to_string(a) };   // dict<int, string>
 ```
 
 ## スコープ
 最後にセミコロンがない場合、最後の式がスコープの評価結果となる
+```
+scope       = "{" (expr semi?)* "}"
+```
 ```
 println({ 1; 2; 3 });  // => 3
 ```
@@ -102,7 +108,7 @@ switch x {
 ```
 
 ## 繰り返し文
-### loop
+### `loop`
 ```
 loop        = "loop" scope
 ```
@@ -112,18 +118,85 @@ loop {
 }
 ```
 
-### for
-### while
-### do-while
+### `for`
+いまのところ範囲 for 文だけです<br>
+イテレータで変数名を書くと for 文のスコープで自動定義されます。
+（イテレータじゃないけど）
+```
+for         = "for" expr "in" expr scope
+```
+```
+for i in 0 .. 10 {
+    println(i);
+}
 
+// =>
+//  0
+//  1
+ ...
+//  9
+```
+
+
+### `while`
+```
+while       = "while" expr scope
+```
+```
+let i = 0;
+
+while i < 10 {
+    println(i);
+    i = i + 1;
+}
+```
+
+### `do-while`
+```
+do_while        = "do" scope "while" expr
+```
+```
+let i = 0;
+
+do {
+    println(i);
+    i = i + 1;
+} while i < 10;
+```
 
 
 
 ## 関数定義
+戻り地の指定が必要
+```
+argument    = ident ":" typename
+function    = "fn" "(" argument ("," argument)* ")" "->" typename scope
+```
+```
+fn fibo(n: int) -> int {
+    if n < 2 {
+        return 1;
+    }
 
-
+    fibo(n - 2) + fibo(n - 1)
+}
+```
 
 ## 列挙型 (enum)
+値をもたせることができます
+```
+enumerator  = ident ("(" typename ")")?
+enum        = "enum" ident "{" enumerator ("," enumerator)* "}"
+```
+```
+enum Kind {
+    A,
+    B(int),
+    C(string)
+}
+
+let kind : Kind = Kind.C("Abc0123");
+```
 
 
 ## 構造体 (struct)
