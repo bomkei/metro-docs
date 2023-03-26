@@ -83,7 +83,8 @@ fn func(n: int) -> int {
 ### switch
 金欠でスイッチを売ったことがあります。
 ```
-switch      = "switch" expr
+case        = "case" expr ":" scope
+switch      = "switch" expr "{" case* "}"
 ```
 ```
 let x = input();
