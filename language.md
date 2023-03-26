@@ -284,8 +284,5 @@ println(fibo(10))
 ガベージコレクタと言えるかどうかはさすがに微妙だけど。
 
 
-
-
-
 ## 組み込み関数
-- [組み込み関数](./builtin-functions.md)
+- [組み込み関数](builtin-functions.md)
